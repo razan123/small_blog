@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -41,6 +43,10 @@ Rails.application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
+
+  resources :posts do
+    post :add_comment 
+  end
 
   # Example resource route with concerns:
   #   concern :toggleable do

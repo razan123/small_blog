@@ -1,11 +1,24 @@
-<h1 style="color:red">Listing posts</h1>
+<%= stylesheet_link_tag "main.css" %>
 
-<table>
+<div class="heading">
+  
+  <a target = "_blank" href="http://cloudfactory.com.np/">
+    <img src="http://yourstory.com//wp-content/uploads/2012/10/cf-combined-logo-300x264.png">
+  </a><img src="http://www.cloudfactory.com/hs-fs/hub/351374/file-461130609-jpg/img/cf-avaya.jpg">
+  <h1 style="color:Black">Listing posts</h1>
+</div>
+<div class="jumbotron" style="color:White">
+</div>/edit
+
+<div class="body" style="color:White">
+
+<table border = "1px">
   <thead>
     <tr>
       <th>Titles</th>
       <th>Text</th>
-      <th colspan="3"></th>
+      <th colspan="5"></th>
+      
     </tr>
   </thead>
 
@@ -17,11 +30,15 @@
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Erase', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
-</table>
 
+</table>
+</div>
+
+
+<%= link_to 'Add New Post', new_post_path%>
 <br>
 
-<%= link_to 'New Post', new_post_path %>

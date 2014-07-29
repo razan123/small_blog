@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+http_basic_authenticate_with :name =>"razan", :password => "himalayantimes1"
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -10,11 +11,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params['id'])
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+   ## binding.pry
   end
 
   # GET /posts/1/edit
@@ -56,9 +59,17 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to PostsController_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def add_comment
+     post = Post.find(params['post_id'])
+     post.comments = "test"
+
+     post.save
+     redirect_to :back
   end
 
   private

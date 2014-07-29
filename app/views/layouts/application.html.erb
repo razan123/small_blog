@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>My App</title>
+  
+    <link rel="stylesheet" href="main.css" >
+  
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +13,8 @@
 <body>
 
 <%= yield %>
+
+
 
 </body>
 </html>
